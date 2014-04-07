@@ -1,0 +1,207 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script src="./js/jquery-latest.js"></script>
+        <style type="text/css">
+            .table{
+                width: 100%;                
+            }
+            .data{
+                /*border: 1px solid red;*/                
+            }
+        </style>
+    </head>
+    <body>
+        <form id="form" method="POST" action="index.jsp">
+            <div style="width: 100%;">
+                <h2>Exam 2</h2>
+                <table style="border: 1px solid black; padding: 10px; border-radius: 10px; margin: auto;">
+                    <tr>
+                        <td style="text-align: center;">
+                            <h3>Salary Validation</h3>
+                        </td>
+                    </tr>
+                    <tr>    <!-- name row //-->
+                        <td>                            
+                            <table class="table">
+                                <tr>
+                                    <th colspan="2" style="background-color: #5F74E2; color: #ffffff;text-align: left; padding: 5px; font-weight: bolder;">Name<span style="color: red;">*</span></th>
+                                </tr>
+                                <tr>
+                                    <td id="firstName" class="data" style="padding: 5px;">
+                                        <input type="text" id="fName" name="fName" />
+                                        <br />
+                                        First Name
+                                    </td>
+                                    <td class="data" style="padding: 5px;">
+                                        <input type="text" id="lName" name="lName" />
+                                        <br />
+                                        Last Name
+                                    </td>
+                                </tr>
+                                <tr id="noFName" style="display: none;">
+                                    <td colspan="2" style="color: red; text-align: center;">Please enter a first name.</td>
+                                </tr>
+                                <tr id="noLName" style="display: none;">
+                                    <td colspan="2" style="color: red; text-align: center;">Please enter a last name.</td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>    <!-- address row //--> 
+                        <td>
+                            <table id="addressTable" class="table">
+                                <tr>
+                                    <th colspan="4" style="background-color: #5F74E2; color: #ffffff; text-align: left; padding: 5px; font-weight: bolder; font-size: 14pt;">Address<span style="color: red;">*</span></th>
+                                </tr>
+                                <tr>
+                                    <td class="data" style="padding: 5px;">
+                                        <input type="text" id="street" name="street" />
+                                        <br />
+                                        Street
+                                    </td>
+                                    <td class="data" style="padding: 5px;">
+                                        <input type="text" id="city" name="city" />
+                                        <br />
+                                        City
+                                    </td>
+                                    <td class="data" style="padding: 5px;">
+                                        <select name="state">
+                                            <option value="AL">AL</option>
+                                            <option value="AK">AK</option>
+                                            <option value="AZ">AZ</option>
+                                            <option value="AR">AR</option>
+                                            <option value="CA">CA</option>
+                                            <option value="CO">CO</option>
+                                            <option value="CT">CT</option>
+                                            <option value="DE">DE</option>
+                                            <option value="DC">DC</option>
+                                            <option value="FL">FL</option>
+                                            <option value="GA">GA</option>
+                                            <option value="HI">HI</option>
+                                            <option value="ID">ID</option>
+                                            <option value="IL">IL</option>
+                                            <option value="IN">IN</option>
+                                            <option value="IA">IA</option>
+                                            <option value="KS">KS</option>
+                                            <option value="KY">KY</option>
+                                            <option value="LA">LA</option>
+                                            <option value="ME">ME</option>
+                                            <option value="MD">MD</option>
+                                            <option value="MA">MA</option>
+                                            <option value="MI">MI</option>
+                                            <option value="MN">MN</option>
+                                            <option value="MS">MS</option>
+                                            <option value="MO">MO</option>
+                                            <option value="MT">MT</option>
+                                            <option value="NE">NE</option>
+                                            <option value="NV">NV</option>
+                                            <option value="NH">NH</option>
+                                            <option value="NJ">NJ</option>
+                                            <option value="NM">NM</option>
+                                            <option value="NY">NY</option>
+                                            <option value="NC">NC</option>
+                                            <option value="ND">ND</option>
+                                            <option value="OH">OH</option>
+                                            <option value="OK">OK</option>
+                                            <option value="OR">OR</option>
+                                            <option value="PA">PA</option>
+                                            <option value="RI">RI</option>
+                                            <option value="SC">SC</option>
+                                            <option value="SD">SD</option>
+                                            <option value="TN">TN</option>
+                                            <option value="TX">TX</option>
+                                            <option value="UT">UT</option>
+                                            <option value="VT">VT</option>
+                                            <option value="VA">VA</option>
+                                            <option value="WA">WA</option>
+                                            <option value="WV">WV</option>
+                                            <option value="WI">WI</option>
+                                            <option value="WY">WY</option>
+                                        </select>
+                                        <br />
+                                        State
+                                    </td>
+                                    <td class="data" style="padding: 5px;">
+                                        <input style="text-align: center;" type="text" id="zip" name="zip" size="1" maxLength="5" pattern="[0-9]{4}"/>
+                                        <br />
+                                        Zip
+                                    </td>
+                                </tr>
+                                <tr id="noStreet" style="display: none;">
+                                    <td colspan="4" style="color: red; text-align: center;">Please enter a street.</td>
+                                </tr>
+                                <tr id="noCity" style="display: none;">
+                                    <td colspan="4" style="color: red; text-align: center;">Please enter a city.</td>
+                                </tr>
+                                <tr id="noState" style="display: none;">
+                                    <td colspan="4" style="color: red; text-align: center;">Please enter a state.</td>
+                                </tr>
+                                <tr id="noZip" style="display: none;">
+                                    <td colspan="4" style="color: red; text-align: center;">Please enter a zip code.</td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>    <!-- phone row //--> 
+                        <td>
+                            <table class="table">
+                                <tr>
+                                    <th style="background-color: #5F74E2; color: #ffffff; text-align: left; padding: 5px; font-weight: bolder; font-size: 14pt;">Phone<span style="color: red;">*</span></th>
+                                </tr>
+                                <tr>
+                                    <td class="data" style="padding: 5px;">
+                                        <input style="text-align: center;" type="text" id="areaCode" name="areaCode" size="1" maxLength="3" pattern="[0-9]{3}" />
+                                        -
+                                        <input style="text-align: center;" type="text" id="firstThreeNumbers" name="firstThreeNumbers" size="1" maxLength="3" pattern="[0-9]{3}" />
+                                        -
+                                        <input style="text-align: center;" type="text" id="lastFourNumbers" name="lastFourNumbers" size="1" maxLength="4" pattern="[0-9]{4}" />
+                                    </td>
+                                </tr>
+                                <tr id="noAreaCode" style="display: none;">
+                                    <td style="color: red; text-align: center;">Please enter a street.</td>
+                                </tr>
+                                <tr id="noPhoneNumber" style="display: none;">
+                                    <td style="color: red; text-align: center;">Please enter a city.</td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>    <!-- salary row //--> 
+                        <td>
+                            <table class="table">
+                                <tr>
+                                    <th style="background-color: #5F74E2; color: #ffffff; text-align: left; padding: 5px; font-weight: bolder; font-size: 14pt;">Yearly Salary<span style="color: red;">*</span></th>
+                                </tr>
+                                <tr>
+                                    <td class="data" style="padding: 5px;">
+                                        <input style="text-align: center;" type="text" id="salary" name="salary" />
+                                        <br />
+                                        Salary
+                                    </td>                                    
+                                </tr>
+                                <tr id="noSalary" style="display: none;">
+                                    <td class="data" style="color: red; text-align: center;">Please enter a salary.</td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </form>
+        <script type="text/javascript">
+
+            $(document).ready(function() {
+                //$('.table').width($('#addressTable').width());
+                alert($('#firstName').width());
+                //$('.data').width($('#firstName').width());
+            });
+        </script>
+    </body>
+</html>
